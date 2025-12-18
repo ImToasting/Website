@@ -1,0 +1,25 @@
+@mixin theme-light {
+  --color-text: #213547;
+  --color-background: #ffffff;
+  --color-ui-element: rgba(1, 1, 1, 0.06);
+  --color-shadow: rgba(0,0,0,0.2);
+  --color-stroke: rgba(0, 0, 0, 0.2);
+  --color-loading: var(--color-ui-element);
+}
+
+@mixin theme-dark {
+  --color-text: rgba(255, 255, 255, 0.87);
+  --color-background: #242424;
+  --color-shadow: rgba(0,0,0,0.4);
+  --color-ui-element: rgba(0, 0, 0, 0.3);
+  --color-stroke: rgba(255, 255, 255, 0.1);
+  --color-loading: var(--color-ui-element);
+}
+
+@mixin theme-auto {
+  @include theme-light;
+
+  @media (prefers-color-scheme: dark) {
+    @include theme-dark;
+  }
+}

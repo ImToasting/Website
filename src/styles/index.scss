@@ -1,0 +1,100 @@
+@import "themes";
+@import "mixins";
+
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.8;
+    font-weight: 400;
+
+    color-scheme: light dark;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    --max-width: 1100px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    color: var(--color-text);
+    background-color: var(--color-background);
+
+    @include theme-auto;
+}
+
+h1 {
+    line-height: 1.1;
+    font-size: 28pt;
+}
+
+h2 {
+    line-height: 1.1;
+    margin-top: 2.8em;
+    margin-bottom: 1.2em;
+    border-bottom: 1px solid var(--color-stroke);
+    padding-bottom: 20px;
+}
+
+h3 {
+    line-height: 1.1;
+    margin-top: 1em;
+    margin-bottom: 0.3em;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    font-size: 1rem;
+}
+
+a {
+    font-weight: 500;
+    color: #646cff;
+    text-decoration: inherit;
+}
+a:hover {
+    color: #535bf2;
+}
+
+button {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: var(--color-background);
+    cursor: pointer;
+    color: var(--color-text);
+    transition: opacity .2s ease;
+}
+button:hover {
+    opacity: .9;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.visually-hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: auto;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap;
+}
+
+@media screen and (max-width: 650px) {
+    h1 {
+        font-size: 22pt;
+    }
+}
